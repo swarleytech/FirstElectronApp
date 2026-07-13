@@ -1,0 +1,1 @@
+My first electron app, a simple, local music player
