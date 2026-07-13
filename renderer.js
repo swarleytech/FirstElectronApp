@@ -14,3 +14,17 @@ playbutton.addEventListener('click', () => {
         playbutton.textContent = 'Play';
     }
 });
+
+audio.addEventListener('timeupdate', () => {
+
+    const percentCompleted = (audio.currentTime / audio.duration) * 100;
+    
+    progressBar.value = percentCompleted;
+});
+
+progressBar.addEventListener('input', () => {
+
+    const seekTime = (progressBar.value / 100) * audio.duration;
+
+    audio.currentTime = seekTime;
+});
